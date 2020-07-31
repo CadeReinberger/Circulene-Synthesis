@@ -1,0 +1,28 @@
+try\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{chemfig}
+\usepackage{tikz}
+\usepackage{relsize}
+\usepackage[paperwidth=8in,paperheight=4in]{geometry}
+
+
+\begin{document}
+
+\startscheme
+    \chemfig{=^[:120.0,1.0](-[:60.0,1.0]N^{^+}(=[:120.0,1.0]{\lewis{2:4:,O}})-[:0.0,1.0]@{moxy}{\lewis{0:2:6:,O}^{^-}})-[:180.0,1.0]=^[:-120.0,1.0]-[:-60.0,1.0](-[:-120.0,1.0])=^[:-0.0,1.0]-[:60.0,1.0]-[:0.0,1.0]C_7H_6NO_2}
+    +
+    \chemfig{@{hcah}H-[@{hcab}:0.0,1.0]@{hcacl}Cl}
+    \mathlarger{\mathlarger{\mathlarger{\mathlarger{\longrightarrow}}}}
+    \chemfig{=^[:120.0,1.0](-[:60.0,1.0]N^{^+}(=[:120.0,1.0]{\lewis{2:4:,O}})-[:0.0,1.0]{\lewis{2:6:,O}H})-[:180.0,1.0]=^[:-120.0,1.0]-[:-60.0,1.0](-[:-120.0,1.0])=^[:-0.0,1.0]-[:60.0,1.0]-[:0.0,1.0]C_7H_6NO_2}
+    +
+    \hphantom{x}
+    \chemfig{\lewis{0:2:4:6:, Cl}^{^-}}
+\stopscheme
+\chemmove[->]{
+    \draw(hcab)..controls+(270:5mm)and+(195:5mm)..(hcacl);
+    \draw(moxy)..controls+(0:20mm)and+(90:12mm)..(hcah);
+}
+
+
+
+\end{document}

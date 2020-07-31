@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{chemfig}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{relsize}
+\usepackage[paperwidth=9.5in,paperheight=4in]{geometry}
+
+
+\begin{document}
+
+\startscheme
+    \chemfig{=^[:120.0,1.0](-[:60.0,1.0]{\lewis{7:,N}}(-[:120.0,1.0]@{oxy}{\lewis{0:2:4:,O}^{^-}})-[:0.0,1.0]{\lewis{2:6:,O}H})-[:180.0,1.0]=^[:-120.0,1.0]-[:-60.0,1.0](-[:-120.0,1.0])=^[:-0.0,1.0]-[:60.0,1.0]-[:0.0,1.0]C_7H_6NO_2}
+    + 
+    \chemfig{@{hcah}H-[@{hcab}:0.0,1.0]@{hcacl}Cl}
+    +
+    \chemfig{\lewis{,Sn}}^{^{2+}}
+    +\hphantom{\mid}
+    \chemfig{\lewis{0:2:4:6:, Cl}^{^-}}
+    \mathlarger{\mathlarger{\mathlarger{\mathlarger{\longrightarrow}}}}
+    \chemfig{=^[:120.0,1.0](-[:60.0,1.0]{\lewis{7:,N}}(-[:120.0,1.0]{H\lewis{0:2:,O}})-[:0.0,1.0]{\lewis{2:6:,O}H})-[:180.0,1.0]=^[:-120.0,1.0]-[:-60.0,1.0](-[:-120.0,1.0])=^[:-0.0,1.0]-[:60.0,1.0]-[:0.0,1.0]C_7H_6NO_2}
+    + \chemfig{\lewis{,Sn}}^{^{2+}}
+    + \hphantom{|}
+    2\hphantom{2}\chemfig{\lewis{0:2:4:6:, Cl}^{^-}}
+    \hphantom{x}
+\stopscheme
+\chemmove[->]{
+    \draw(oxy)..controls+(0:30mm)and+(90:15mm)..(hcah);
+    \draw(hcab)..controls+(270:5mm)and+(195:5mm)..(hcacl);
+}
+
+%I have literally taken 5 hours to do approximately 2% of the total mechanism. I am not going to continue this. I'll TeX the large reactions, and I'm going to do the rest by hand. 
+
+
+\end{document}

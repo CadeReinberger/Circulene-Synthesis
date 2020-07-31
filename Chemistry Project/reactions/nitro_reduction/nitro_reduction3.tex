@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{chemfig}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{relsize}
+\usepackage[paperwidth=9in,paperheight=4in]{geometry}
+
+
+\begin{document}
+
+\startscheme
+    \chemfig{=^[:120.0,1.0](-[:60.0,1.0]@{n}{\lewis{7:,N}}(-[:120.0,1.0]@{oxy}{\lewis{0.2:4:,O}})-[:0.0,1.0]{\lewis{2:6:,O}H})-[:180.0,1.0]=^[:-120.0,1.0]-[:-60.0,1.0](-[:-120.0,1.0])=^[:-0.0,1.0]-[:60.0,1.0]-[:0.0,1.0]C_7H_6NO_2}
+    +
+    \hphantom{\mid}
+    \chemfig{@{tin}\lewis{4.,Sn}}^{^+}
+    +
+    \chemfig{\lewis{0:2:4:6:, Cl}^{^-}}
+    \mathlarger{\mathlarger{\mathlarger{\mathlarger{\longrightarrow}}}}
+    \chemfig{=^[:120.0,1.0](-[:60.0,1.0]{\lewis{7:,N}}(-[:120.0,1.0]{\lewis{0:2:4:,O}^{^-}})-[:0.0,1.0]{\lewis{2:6:,O}H})-[:180.0,1.0]=^[:-120.0,1.0]-[:-60.0,1.0](-[:-120.0,1.0])=^[:-0.0,1.0]-[:60.0,1.0]-[:0.0,1.0]C_7H_6NO_2}
+    + \hphantom{|}
+    \chemfig{\lewis{,Sn}}^{^{2+}}
+    + \hphantom{|}
+    \chemfig{\lewis{0:2:4:6:, Cl}^{^-}}
+    \hphantom{x}
+\stopscheme
+\chemmove[-left to]{
+    \draw(tin)..controls+(170:10mm)and+(30:20mm)..(oxy);
+}
+
+
+
+\end{document}
